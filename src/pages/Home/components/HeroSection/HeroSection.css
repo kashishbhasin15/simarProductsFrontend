@@ -1,0 +1,221 @@
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5F1E8 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="%23D4B896" opacity="0.1"/><circle cx="90" cy="30" r="0.3" fill="%23C9A961" opacity="0.1"/><circle cx="50" cy="70" r="0.4" fill="%23D4B896" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  padding: 2rem 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(201, 169, 97, 0.1);
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #C9A961;
+  margin-bottom: 2rem;
+}
+
+.hero-badge svg {
+  color: #C9A961;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #5D4E37;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #C9A961;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.hero-description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #7A6B5D;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(135deg, #C9A961, #D4B896);
+  color: white;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 169, 97, 0.3);
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: #5D4E37;
+  border-color: rgba(93, 78, 55, 0.3);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(93, 78, 55, 0.05);
+  border-color: #5D4E37;
+}
+
+.hero-features {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.9rem;
+  color: #8B7355;
+}
+
+.hero-feature svg {
+  color: #C9A961;
+}
+
+.hero-visual {
+  position: relative;
+  height: 600px;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.hero-image-container:hover .hero-image {
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.2), rgba(212, 184, 150, 0.1));
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-visual {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .hero-visual {
+    height: 300px;
+  }
+}
